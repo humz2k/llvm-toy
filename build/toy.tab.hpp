@@ -75,13 +75,19 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 42 "src/toy.y"
+#line 50 "src/toy.y"
 
     char id[31];
     double r;
     int i;
+    ExprAST* expr;
+    ExprList* expr_list;
+    BoolAST* bexpr;
+    IdList* input_list;
+    FunctionAST* func_t;
+    UnitAST* unit_t;
 
-#line 85 "build/toy.tab.hpp"
+#line 91 "build/toy.tab.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;

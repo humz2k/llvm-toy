@@ -1,0 +1,7 @@
+fn (x a) 
+    if a < 1 then 
+        a 
+    else 
+        a + (x a - 1)
+
+(x 5)

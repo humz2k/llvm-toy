@@ -364,9 +364,9 @@ struct yy_trans_info
 static const flex_int16_t yy_accept[61] =
     {   0,
        28,   28,   32,   30,   29,   29,   10,   30,   20,   21,
-       18,   16,   17,   19,   30,    7,    9,    8,   28,   28,
+       18,   16,   17,   19,    2,    7,    9,    8,   28,   28,
        28,   28,   28,   28,   28,   28,   30,    6,   12,    1,
-        2,    0,    3,    5,    4,   28,   28,   28,   28,   27,
+        2,    2,    3,    5,    4,   28,   28,   28,   28,   27,
        24,   28,   15,   28,   28,   13,    1,    2,   14,   28,
        28,   11,   28,   28,   26,   28,   25,   22,   23,    0
     } ;
@@ -483,6 +483,7 @@ char *yytext;
 #include <stdio.h>
 #include <string.h>
 #include <vector>
+#include "../src/ast.hpp"
 #include "toy.tab.hpp"
 
 extern "C" int yylex();
@@ -497,8 +498,8 @@ int check_type();
 #define log(...)
 #endif
 
-#line 500 "build/toy.yy.cpp"
 #line 501 "build/toy.yy.cpp"
+#line 502 "build/toy.yy.cpp"
 
 #define INITIAL 0
 
@@ -715,10 +716,10 @@ YY_DECL
 		}
 
 	{
-#line 25 "src/toy.l"
+#line 26 "src/toy.l"
 
 
-#line 721 "build/toy.yy.cpp"
+#line 722 "build/toy.yy.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -777,14 +778,13 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 27 "src/toy.l"
+#line 28 "src/toy.l"
 { }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 29 "src/toy.l"
-{log("FLOAT_CONST %f",atof(yytext));
-                    yylval.r = atof(yytext);return(REAL);}
+#line 30 "src/toy.l"
+{yylval.r = atof(yytext);return(REAL);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP

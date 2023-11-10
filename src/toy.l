@@ -1,11 +1,12 @@
 L			[a-zA-Z_]
-F			[0-9]+\.[0-9]*
+F			[0-9]+(\.[0-9]*)?
 
 %{
 
 #include <stdio.h>
 #include <string.h>
 #include <vector>
+#include "../src/ast.hpp"
 #include "toy.tab.hpp"
 
 extern "C" int yylex();
@@ -26,8 +27,7 @@ int check_type();
 
 "//"[^\n]*              { }
 
-{F}			    {log("FLOAT_CONST %f",atof(yytext));
-                    yylval.r = atof(yytext);return(REAL);}
+{F}			    {yylval.r = atof(yytext);return(REAL);}
 
 "<="            {return(LE);}
 ">="            {return(GE);}

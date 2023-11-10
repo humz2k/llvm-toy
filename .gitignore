@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+toy
+build
+.vscode
