@@ -1,5 +1,6 @@
 L			[a-zA-Z_]
 F			[0-9]+(\.[0-9]*)?
+U           [\+\.\-\*\&\^\%\$\#\@\!\/\,\:\;\']
 
 %{
 
@@ -48,6 +49,7 @@ int check_type();
 "/"             {return('/');}
 "("             {return('(');}
 ")"             {return(')');}
+{U}+            {printf("USER OP!\n");}
 
 "true"          {yylval.i = 1; return(BOOL);}
 "false"          {yylval.i = 0; return(BOOL);}

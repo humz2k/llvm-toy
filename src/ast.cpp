@@ -67,6 +67,7 @@ NamedExprAST::NamedExprAST(const char* name_){
 llvm::Value* NamedExprAST::execute(){
     llvm::Value* out = NamedValues[name];
     if (!out){
+        return (make_object(CallExprAST,name,make_object(ExprList)))->execute();
         printf("No variabled named %s\n",name);
         exit(1);
     }

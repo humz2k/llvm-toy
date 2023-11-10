@@ -1,7 +1,5 @@
-fn (x a) 
-    if a < 1 then 
-        a 
-    else 
-        a + (x a - 1)
+fn (tmp a) if a == 1 then 1 else 0
 
-(x 5)
+fn x if (tmp 1) == 1 then 1 else 0
+
+x
